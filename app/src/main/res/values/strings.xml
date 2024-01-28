@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Hobby_Buddy_Chat</string>
+    <string name="get_started">GET STARTED</string>
+    <string name="continue_with_google">Continue With Google</string>
+</resources>
