@@ -13,6 +13,18 @@
         android:theme="@style/Theme.Hobby_Buddy_Chat"
         tools:targetApi="31">
         <activity
+            android:name=".HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DisplayProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SettingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EditProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".NotificationFragment"
             android:exported="false" />
         <activity
@@ -38,18 +50,18 @@
             android:exported="false" />
         <activity
             android:name=".ProfileSetupActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ProfileSetupActivity1Activity"
-            android:exported="false" />
-        <activity
-            android:name=".SignUpActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".SignUpActivity"
+            android:exported="true">
+
         </activity>
         <activity
             android:name=".WelcomeActivity"

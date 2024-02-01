@@ -2,4 +2,11 @@
     <string name="app_name">Hobby_Buddy_Chat</string>
     <string name="get_started">GET STARTED</string>
     <string name="continue_with_google">Continue With Google</string>
+    <string-array name="spinner_items">
+        <item>Coding</item>
+        <item>Reading</item>
+        <item>Writing</item>
+        <item>Playing</item>
+        <item>Singing</item>
+    </string-array>
 </resources>
