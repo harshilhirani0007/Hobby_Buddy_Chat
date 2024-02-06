@@ -1,11 +1,15 @@
 package com.example.hobby_buddy_chat;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
-import android.widget.SpinnerAdapter;
+import android.widget.TextView;
 
 public class ProfileSetupActivity extends AppCompatActivity {
 
@@ -19,14 +23,31 @@ public class ProfileSetupActivity extends AppCompatActivity {
         // Fetch the string array from strings.xml
         String[] hobbiesArray = getResources().getStringArray(R.array.spinner_items);
 
-        // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, hobbiesArray);
-
-        // Specify the layout to use when the list of choices appears
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        // Apply the adapter to the spinner
         spinner.setAdapter(adapter);
 
+        LinearLayout container = findViewById(R.id.jobTitleContainer);
+
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                // Get the selected item from the spinner
+                String selectedItem = parent.getItemAtPosition(position).toString();
+
+                // Create a TextView to display the selected item
+                TextView textView = new TextView(ProfileSetupActivity.this);
+                textView.setText(selectedItem);
+
+                // Add TextView to the container
+//                container.removeAllViews(); // Remove any previous views
+                container.addView(textView);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                // Do nothing
+            }
+        });
     }
 }

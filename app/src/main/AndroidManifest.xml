@@ -19,37 +19,14 @@
             android:name=".DisplayProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".SettingActivity"
-            android:exported="false" />
-        <activity
             android:name=".EditProfileActivity"
             android:exported="false" />
-        <activity
-            android:name=".NotificationFragment"
-            android:exported="false" />
-        <activity
-            android:name=".SearchFragment"
-            android:exported="false" />
-        <activity
-            android:name=".MyProfileFragment"
-            android:exported="false" />
-        <activity
-            android:name=".MessageFragment"
-            android:exported="false" />
-        <activity
-            android:name=".HomeFragment"
-            android:exported="false" />
+
         <activity
             android:name=".ForgotPasswordActivity"
             android:exported="false" />
         <activity
             android:name=".SignInActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ProfileSetupSecondActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ProfileSetupActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -57,11 +34,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ProfileSetupSecondActivity"
+            android:exported="true" >
+        </activity>
+        <activity
+            android:name=".ProfileSetupActivity"
+            android:exported="true" >
+        </activity>
 
         <activity
             android:name=".SignUpActivity"
             android:exported="true">
-
         </activity>
         <activity
             android:name=".WelcomeActivity"
