@@ -17,15 +17,15 @@ public class WelcomeActivity extends AppCompatActivity {
         binding= ActivityWelcomePageBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        binding.SignIn.setOnClickListener(v ->
-        {
-            startActivity(new Intent(WelcomeActivity.this,SignInActivity.class));
-        });
+            binding.SignUp.setOnClickListener(v ->
+            {
+                startActivity(new Intent(WelcomeActivity.this, SignUpActivity.class));
+            });
 
-       binding.SignUp.setOnClickListener(v  ->
-       {
-           startActivity(new Intent(WelcomeActivity.this, SignUpActivity.class));
-       });
+            binding.SignIn.setOnClickListener(v ->
+            {
+                startActivity(new Intent(WelcomeActivity.this, SignInActivity.class));
+            });
 
     }
 }
