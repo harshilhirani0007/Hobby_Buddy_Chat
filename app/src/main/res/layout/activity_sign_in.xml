@@ -83,6 +83,7 @@
         app:layout_constraintTop_toBottomOf="@+id/edtLoginPassword" />
 
     <TextView
+        android:id="@+id/tvForgotPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="241dp"
@@ -122,7 +123,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
     <TextView
-        android:id="@+id/linkTextView"
+        android:id="@+id/tvSignUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="13dp"

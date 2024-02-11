@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "986330681175",
+    "firebase_url": "https://hobbybuddychat-e76b3-default-rtdb.firebaseio.com",
+    "project_id": "hobbybuddychat-e76b3",
+    "storage_bucket": "hobbybuddychat-e76b3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:986330681175:android:b26aba2d4f00eb5faff812",
+        "android_client_info": {
+          "package_name": "com.example.hobby_buddy_chat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "986330681175-46iam40g8pqo5jleknchcu3tbcb8vhh8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDELc7hljOe3gT-vMZ_SMMAa6meVZlKgY4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "986330681175-46iam40g8pqo5jleknchcu3tbcb8vhh8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
