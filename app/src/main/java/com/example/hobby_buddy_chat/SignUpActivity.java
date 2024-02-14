@@ -1,11 +1,19 @@
 package com.example.hobby_buddy_chat;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.hobby_buddy_chat.databinding.ActivitySignUpBinding;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class SignUpActivity extends AppCompatActivity {
 
@@ -40,6 +48,44 @@ public class SignUpActivity extends AppCompatActivity {
         String email=binding.edtEmail.getText().toString();
         String age=binding.edtAge.getText().toString();
         String password=binding.edtpassword.getText().toString();
+
+        if(username.contains(" "))
+        {
+            Toast.makeText(this, "Username Cannot contain whitespace", Toast.LENGTH_SHORT).show();
+        }
+        else if(password.length()>=8)
+        {
+            Toast.makeText(this, "Password must contain 8 or more letters", Toast.LENGTH_SHORT).show();
+        }
+        else
+        {
+            DatabaseReference userRef= FirebaseDatabase.getInstance().getReference("users");
+            userRef.orderByChild("username").equalTo(username).addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    if(snapshot.exists())
+                    {
+                        Toast.makeText(SignUpActivity.this, "This username is already taken by another user", Toast.LENGTH_SHORT).show();
+                    }
+                    else
+                    {
+                        Intent i=new Intent(SignUpActivity.this,SignUpSecondActivity.class);
+                        i.putExtra("name",name);
+                        i.putExtra("username",username);
+                        i.putExtra("email",email);
+                        i.putExtra("age",age);
+                        i.putExtra("password",password);
+
+                        startActivity(i);
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+        }
 
     }
 }
