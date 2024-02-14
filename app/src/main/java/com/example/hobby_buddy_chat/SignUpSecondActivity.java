@@ -1,7 +1,6 @@
 package com.example.hobby_buddy_chat;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.os.Bundle;
 import android.view.View;
@@ -11,12 +10,12 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-public class ProfileSetupActivity extends AppCompatActivity {
+public class SignUpSecondActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile_setup);
+        setContentView(R.layout.activity_signup_second);
 
         Spinner spinner = findViewById(R.id.selectHobby);
 
@@ -36,7 +35,7 @@ public class ProfileSetupActivity extends AppCompatActivity {
                 String selectedItem = parent.getItemAtPosition(position).toString();
 
                 // Create a TextView to display the selected item
-                TextView textView = new TextView(ProfileSetupActivity.this);
+                TextView textView = new TextView(SignUpSecondActivity.this);
                 textView.setText(selectedItem);
 
                 // Add TextView to the container

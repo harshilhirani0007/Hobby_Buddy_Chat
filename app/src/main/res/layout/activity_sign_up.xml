@@ -10,8 +10,8 @@
         android:id="@+id/textView3"
         android:layout_width="388dp"
         android:layout_height="42dp"
-        android:layout_marginStart="11dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="12dp"
         android:fontFamily="@font/montserrat_extra_bold"
         android:gravity="center"
@@ -33,7 +33,7 @@
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtRegisterEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/edtEmail" />
 
     <TextView
         android:id="@+id/textView4"
@@ -57,9 +57,9 @@
         style="@style/edit_text"
         android:layout_width="316dp"
         android:layout_height="45dp"
-        android:layout_marginStart="47dp"
-        android:layout_marginTop="35dp"
-        android:layout_marginEnd="48dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginEnd="47dp"
         android:backgroundTint="@color/blue"
         android:gravity="center"
         android:hint="GET STARTED"
@@ -68,10 +68,10 @@
         android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtRegisterPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/edtpassword" />
 
     <EditText
-        android:id="@+id/edtRegisterPassword"
+        android:id="@+id/edtpassword"
         style="@style/edit_text"
         android:layout_width="316dp"
         android:layout_height="45dp"
@@ -85,7 +85,7 @@
         app:layout_constraintTop_toBottomOf="@+id/edtAge" />
 
     <EditText
-        android:id="@+id/edtRegisterEmail"
+        android:id="@+id/edtEmail"
         style="@style/edit_text"
         android:layout_width="316dp"
         android:layout_height="45dp"
@@ -117,9 +117,9 @@
         style="@style/edit_text"
         android:layout_width="316dp"
         android:layout_height="45dp"
-        android:layout_marginStart="47dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="48dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="47dp"
         android:hint="    Name"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
@@ -127,11 +127,12 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <ImageView
+        android:id="@+id/btnSignUpWithGoogle"
         android:layout_width="300dp"
         android:layout_height="43dp"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="18dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginEnd="47dp"
         android:layout_weight="1"
         android:backgroundTint="@color/grey"
         android:src="@drawable/signup_google"

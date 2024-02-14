@@ -28,10 +28,10 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 if(item.getItemId() == R.id.home)
                     loadFragment(new HomeFragment(), 1);
-                else if(item.getItemId() == R.id.search)
-                    loadFragment(new SearchFragment(), 1);
                 else if(item.getItemId() == R.id.messages)
                     loadFragment(new MessagesFragment(), 1);
+                else if(item.getItemId() != R.id.notification)
+                    loadFragment(new SearchFragment(), 1);
                 else if(item.getItemId() == R.id.profile)
                     loadFragment(new MyProfileFragment(), 1);
                 return true;
