@@ -1,7 +1,11 @@
 package com.example.hobby_buddy_chat;
 
+import androidx.activity.result.ActivityResultLauncher;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -10,12 +14,28 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.example.hobby_buddy_chat.databinding.ActivitySignupSecondBinding;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+
+import java.net.URI;
+
 public class SignUpSecondActivity extends AppCompatActivity {
+
+    ActivitySignupSecondBinding binding;
+    FirebaseAuth mAuth;
+    Uri selectedImageUri;
+    String profilePicture,name,username,email,age,password;
+    ActivityResultLauncher<Intent> activityResultLauncher;
+    DatabaseReference databaseReference;
+    Dialog customeDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_signup_second);
+
+        binding=ActivitySignupSecondBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
         Spinner spinner = findViewById(R.id.selectHobby);
 
