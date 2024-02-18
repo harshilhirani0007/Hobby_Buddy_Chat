@@ -117,7 +117,7 @@ public class SignUpSecondActivity extends AppCompatActivity {
         nextIntent.putExtra("username",i.getStringExtra("username"));
         nextIntent.putExtra("email",i.getStringExtra("email"));
         nextIntent.putExtra("age",i.getStringExtra("age"));
-        nextIntent.putExtra("password"i.getStringExtra("password"));
+        nextIntent.putExtra("password",i.getStringExtra("password"));
         nextIntent.putExtra("gender",gender);
         startActivity(i);
 

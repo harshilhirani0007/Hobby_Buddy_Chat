@@ -53,39 +53,21 @@ public class SignUpActivity extends AppCompatActivity {
         {
             Toast.makeText(this, "Username Cannot contain whitespace", Toast.LENGTH_SHORT).show();
         }
-        else if(password.length()>=8)
+        else if(password.length() < 8)
         {
             Toast.makeText(this, "Password must contain 8 or more letters", Toast.LENGTH_SHORT).show();
         }
         else
         {
-            DatabaseReference userRef= FirebaseDatabase.getInstance().getReference("users");
-            userRef.orderByChild("username").equalTo(username).addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    if(snapshot.exists())
-                    {
-                        Toast.makeText(SignUpActivity.this, "This username is already taken by another user", Toast.LENGTH_SHORT).show();
-                    }
-                    else
-                    {
-                        Intent i=new Intent(SignUpActivity.this,SignUpSecondActivity.class);
-                        i.putExtra("name",name);
-                        i.putExtra("username",username);
-                        i.putExtra("email",email);
-                        i.putExtra("age",age);
-                        i.putExtra("password",password);
+            Intent i=new Intent(SignUpActivity.this,SignUpSecondActivity.class);
+            i.putExtra("name",name);
+            i.putExtra("username",username);
+            i.putExtra("email",email);
+            i.putExtra("age",age);
+            i.putExtra("password",password);
 
-                        startActivity(i);
-                    }
-                }
+            startActivity(i);
 
-                @Override
-                public void onCancelled(@NonNull DatabaseError error) {
-
-                }
-            });
         }
-
     }
 }
