@@ -95,6 +95,8 @@ public class SignUpSecondActivity extends AppCompatActivity {
         else
             Toast.makeText(this, "Please select a gender", Toast.LENGTH_SHORT).show();
     }
+
+    // Send data SignUpSecondActivity to SignUpThirdActivity
     public void sendData()
     {
         customeDialog = new Dialog(getApplicationContext());
@@ -102,11 +104,14 @@ public class SignUpSecondActivity extends AppCompatActivity {
         customeDialog .setCancelable(false);
         customeDialog.show();
 
+        // Create Intent for getdata from SignUpActivity
         Intent i=getIntent();
 
         getSelectedGender();
 
+        // create a second intent for send data to next page SignUpThirdActivity
         Intent nextIntent=new Intent(SignUpSecondActivity.this, SignUpThirdActivity.class);
+
 
         nextIntent.putExtra("name",i.getStringExtra("name"));
         nextIntent.putExtra("username",i.getStringExtra("username"));
