@@ -43,7 +43,8 @@ public class SignUpThirdActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_signup_third);
+        binding = ActivitySignupThirdBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
         // Authenticate for Firebase
         mAuth = FirebaseAuth.getInstance();
@@ -74,10 +75,10 @@ public class SignUpThirdActivity extends AppCompatActivity {
         binding.btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                customDialog=new Dialog(getApplicationContext());
-                customDialog.setContentView(R.layout.process);
-                customDialog.setCancelable(false);
-                customDialog.show();
+//                customDialog=new Dialog(getApplicationContext());
+//                customDialog.setContentView(R.layout.process);
+//                customDialog.setCancelable(false);
+//                customDialog.show();
 
                 // create intent for fetch data
                 Intent i= getIntent();
@@ -111,7 +112,7 @@ public class SignUpThirdActivity extends AppCompatActivity {
                         else
                         {
                             Toast.makeText(SignUpThirdActivity.this, "xx Not done, Try Again.. xx", Toast.LENGTH_SHORT).show();
-                            customDialog.dismiss();
+//                            customDialog.dismiss();
                         }
                     }
                 });
@@ -125,7 +126,7 @@ public class SignUpThirdActivity extends AppCompatActivity {
         databaseReference.child(userId).setValue(newUserData);
 
         Intent i=new Intent(SignUpThirdActivity.this,MainActivity.class);
-        customDialog.dismiss();
+//        customDialog.dismiss();
         startActivity(i);
 
         finish();

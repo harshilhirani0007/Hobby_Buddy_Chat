@@ -37,7 +37,7 @@ public class SignUpSecondActivity extends AppCompatActivity {
 
     DatabaseReference databaseReference;
     Dialog customeDialog;
-    String[] hobbiesArray = getResources().getStringArray(R.array.spinner_items);
+    String[] hobbiesArray;
 
 
     @Override
@@ -46,7 +46,7 @@ public class SignUpSecondActivity extends AppCompatActivity {
 
         binding=ActivitySignupSecondBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
+        hobbiesArray = getResources().getStringArray(R.array.spinner_items);
         Spinner spinner = findViewById(R.id.selectHobby);
 
         // Fetch the string array from strings.xml
@@ -86,29 +86,22 @@ public class SignUpSecondActivity extends AppCompatActivity {
 
     }
 
-    public void getSelectedGender()
-    {
-        if(binding.radioButtonMale.isSelected())
-            gender="Male";
-        else if(binding.radioButtonFemale.isSelected())
-            gender="Female";
-        else
-            Toast.makeText(this, "Please select a gender", Toast.LENGTH_SHORT).show();
-    }
 
     // Send data SignUpSecondActivity to SignUpThirdActivity
     public void sendData()
     {
-        customeDialog = new Dialog(getApplicationContext());
-        customeDialog.setContentView(R.layout.process);
-        customeDialog .setCancelable(false);
-        customeDialog.show();
+//        customeDialog = new Dialog(getApplicationContext());
+//        customeDialog.setContentView(R.layout.process);
+//        customeDialog .setCancelable(false);
+//        customeDialog.show();
 
         // Create Intent for getdata from SignUpActivity
         Intent i=getIntent();
 
-        getSelectedGender();
-
+        if(binding.radioButtonMale.isSelected())
+            gender="Male";
+        else
+            gender="Female";
         // create a second intent for send data to next page SignUpThirdActivity
         Intent nextIntent=new Intent(SignUpSecondActivity.this, SignUpThirdActivity.class);
 
@@ -119,7 +112,7 @@ public class SignUpSecondActivity extends AppCompatActivity {
         nextIntent.putExtra("age",i.getStringExtra("age"));
         nextIntent.putExtra("password",i.getStringExtra("password"));
         nextIntent.putExtra("gender",gender);
-        startActivity(i);
+        startActivity(nextIntent);
 
     }
 }
