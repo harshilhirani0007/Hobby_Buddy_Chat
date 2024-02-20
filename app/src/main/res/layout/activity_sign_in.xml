@@ -66,7 +66,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnGetStarted"
+        android:id="@+id/btnSignIn"
         android:layout_width="316dp"
         android:layout_height="45dp"
         android:layout_marginStart="47dp"
@@ -93,7 +93,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnGetStarted" />
+        app:layout_constraintTop_toBottomOf="@+id/btnSignIn" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -104,7 +104,7 @@
         android:src="@drawable/sign_in_with_google"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnGetStarted" />
+        app:layout_constraintTop_toBottomOf="@+id/btnSignIn" />
 
     <TextView
         android:id="@+id/textView8"
