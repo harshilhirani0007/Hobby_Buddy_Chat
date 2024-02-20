@@ -3,7 +3,6 @@ package com.example.hobby_buddy_chat;
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContract;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -80,29 +79,21 @@ public class SignUpThirdActivity extends AppCompatActivity {
 //                customDialog.setCancelable(false);
 //                customDialog.show();
 
-                // create intent for fetch data
                 Intent i= getIntent();
 
-                // SignUpSecond Page to fetch Data
                 name=i.getStringExtra("name");
                 username=i.getStringExtra("username");
                 email=i.getStringExtra("email");
                 age=i.getStringExtra("age");
                 password=i.getStringExtra("password");
                 gender=i.getStringExtra("gender");
-
-                //  input bio form user
                 bio=binding.enterBio.getText().toString();
 
-                // create user to register for Application
                 mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task)
                     {
-                        // create an object from databse
-                        FirebaseDatabase database=FirebaseDatabase.getInstance();
-                        // create a reference from databse
-                        databaseReference=database.getReference("users");
+                        databaseReference=FirebaseDatabase.getInstance().getReference("users");
 
                         if(task.isSuccessful())
                         {
@@ -125,12 +116,12 @@ public class SignUpThirdActivity extends AppCompatActivity {
         UserData newUserData=new UserData(userId,name,username,email,age,password,gender,bio,profilePicture);
         databaseReference.child(userId).setValue(newUserData);
 
-        Intent i=new Intent(SignUpThirdActivity.this,MainActivity.class);
-//        customDialog.dismiss();
+        Intent i=new Intent(SignUpThirdActivity.this, MainActivity.class);
         startActivity(i);
 
-        finish();
         Toast.makeText(this, "Done..", Toast.LENGTH_SHORT).show();
+        finish();
+
     }
     public void uploadImage()
     {
@@ -151,8 +142,6 @@ public class SignUpThirdActivity extends AppCompatActivity {
                                 {
                                     Uri downloadUri=task.getResult();
                                     profilePicture=downloadUri.toString();
-
-                                    // Update or Upload Profile Picture in Database
                                     updateProfilePictureInDatabase();
                                 }
                                 else
@@ -162,7 +151,7 @@ public class SignUpThirdActivity extends AppCompatActivity {
                             }
                         });
                     }
-                    else 
+                    else
                     {
                         Toast.makeText(SignUpThirdActivity.this, "Failed to upload Image", Toast.LENGTH_SHORT).show();
                     }
@@ -175,4 +164,3 @@ public class SignUpThirdActivity extends AppCompatActivity {
         }
     }
 }
-
