@@ -1,14 +1,14 @@
-package com.example.hobby_buddy_chat;
+package com.example.hobby_buddy_chat.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.example.hobby_buddy_chat.databinding.ActivityMainBinding;
 import com.example.hobby_buddy_chat.databinding.ActivityWelcomePageBinding;
 
 public class WelcomeActivity extends AppCompatActivity {
+
     ActivityWelcomePageBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

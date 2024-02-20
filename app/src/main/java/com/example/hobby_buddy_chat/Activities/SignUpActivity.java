@@ -1,6 +1,5 @@
-package com.example.hobby_buddy_chat;
+package com.example.hobby_buddy_chat.Activities;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -9,11 +8,6 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.hobby_buddy_chat.databinding.ActivitySignUpBinding;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 public class SignUpActivity extends AppCompatActivity {
 
@@ -59,7 +53,7 @@ public class SignUpActivity extends AppCompatActivity {
         }
         else
         {
-            Intent i=new Intent(SignUpActivity.this,SignUpSecondActivity.class);
+            Intent i=new Intent(SignUpActivity.this, SignUpSecondActivity.class);
             i.putExtra("name",name);
             i.putExtra("username",username);
             i.putExtra("email",email);

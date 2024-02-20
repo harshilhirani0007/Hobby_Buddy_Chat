@@ -1,12 +1,7 @@
-package com.example.hobby_buddy_chat;
+package com.example.hobby_buddy_chat.Activities;
 
-import androidx.activity.result.ActivityResult;
-import androidx.activity.result.ActivityResultCallback;
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.net.Uri;
@@ -19,12 +14,10 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.hobby_buddy_chat.R;
 import com.example.hobby_buddy_chat.databinding.ActivitySignupSecondBinding;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseAuthException;
 import com.google.firebase.database.DatabaseReference;
-
-import java.net.URI;
 
 public class SignUpSecondActivity extends AppCompatActivity {
 
@@ -98,10 +91,12 @@ public class SignUpSecondActivity extends AppCompatActivity {
         // Create Intent for getdata from SignUpActivity
         Intent i=getIntent();
 
-        if(binding.radioButtonMale.isSelected())
+        if(binding.radioButtonMale.isChecked())
             gender="Male";
-        else
+        else if(binding.radioButtonFemale.isChecked())
             gender="Female";
+        else
+            Toast.makeText(this, "No gender is selected", Toast.LENGTH_SHORT).show();
         // create a second intent for send data to next page SignUpThirdActivity
         Intent nextIntent=new Intent(SignUpSecondActivity.this, SignUpThirdActivity.class);
 

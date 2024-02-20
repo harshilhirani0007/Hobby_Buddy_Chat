@@ -13,39 +13,39 @@
         android:theme="@style/Theme.Hobby_Buddy_Chat"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".Activities.MainActivity"
             android:exported="true" >
 
         </activity>
         <activity
-            android:name=".DisplayProfileActivity"
+            android:name=".Activities.DisplayProfileActivity"
             android:exported="true" />
         <activity
-            android:name=".EditProfileActivity"
+            android:name=".Activities.EditProfileActivity"
             android:exported="true" />
         <activity
-            android:name=".ForgotPasswordActivity"
+            android:name=".Activities.ForgotPasswordActivity"
             android:exported="true"></activity>
         <activity
-            android:name=".SignInActivity"
+            android:name=".Activities.SignInActivity"
             android:exported="true"></activity>
         <activity
-            android:name=".SignUpThirdActivity"
+            android:name=".Activities.SignUpThirdActivity"
             android:exported="true"></activity>
         <activity
-            android:name=".SignUpSecondActivity"
+            android:name=".Activities.SignUpSecondActivity"
             android:exported="true">
         </activity>
         <activity
-            android:name=".SignUpActivity"
+            android:name=".Activities.SignUpActivity"
             android:exported="true">
 
         </activity>
         <activity
-            android:name=".WelcomeActivity"
+            android:name=".Activities.WelcomeActivity"
             android:exported="true" />
         <activity
-            android:name=".SplashActivity"
+            android:name=".Activities.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

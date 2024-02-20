@@ -1,8 +1,10 @@
-package com.example.hobby_buddy_chat;
+package com.example.hobby_buddy_chat.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.hobby_buddy_chat.R;
 
 public class EditProfileActivity extends AppCompatActivity {
 

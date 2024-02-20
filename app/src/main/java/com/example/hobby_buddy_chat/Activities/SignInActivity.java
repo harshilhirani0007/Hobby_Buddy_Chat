@@ -1,4 +1,4 @@
-package com.example.hobby_buddy_chat;
+package com.example.hobby_buddy_chat.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -26,7 +26,7 @@ public class SignInActivity extends AppCompatActivity {
 
         binding.tvForgotPassword.setOnClickListener(v ->
         {
-            startActivity(new Intent(SignInActivity.this,ForgotPasswordActivity.class));
+            startActivity(new Intent(SignInActivity.this, ForgotPasswordActivity.class));
         });
 
     }

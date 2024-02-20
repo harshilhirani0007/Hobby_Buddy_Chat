@@ -1,4 +1,4 @@
-package com.example.hobby_buddy_chat;
+package com.example.hobby_buddy_chat.Activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +9,11 @@ import androidx.fragment.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.hobby_buddy_chat.Fragments.HomeFragment;
+import com.example.hobby_buddy_chat.Fragments.MessagesFragment;
+import com.example.hobby_buddy_chat.Fragments.MyProfileFragment;
+import com.example.hobby_buddy_chat.R;
+import com.example.hobby_buddy_chat.Fragments.SearchFragment;
 import com.example.hobby_buddy_chat.databinding.ActivityMainBinding;
 import com.google.android.material.navigation.NavigationBarView;
 
