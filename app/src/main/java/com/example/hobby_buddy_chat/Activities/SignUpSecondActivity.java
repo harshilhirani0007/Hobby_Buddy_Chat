@@ -93,10 +93,8 @@ public class SignUpSecondActivity extends AppCompatActivity {
 
         if(binding.radioButtonMale.isChecked())
             gender="Male";
-        else if(binding.radioButtonFemale.isChecked())
-            gender="Female";
         else
-            Toast.makeText(this, "No gender is selected", Toast.LENGTH_SHORT).show();
+            gender="Female";
         // create a second intent for send data to next page SignUpThirdActivity
         Intent nextIntent=new Intent(SignUpSecondActivity.this, SignUpThirdActivity.class);
 
