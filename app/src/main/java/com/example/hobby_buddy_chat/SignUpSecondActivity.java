@@ -100,7 +100,7 @@ public class SignUpSecondActivity extends AppCompatActivity {
 
         if(binding.radioButtonMale.isSelected())
             gender="Male";
-        else
+        else if(binding.radioButtonFemale.isSelected())
             gender="Female";
         // create a second intent for send data to next page SignUpThirdActivity
         Intent nextIntent=new Intent(SignUpSecondActivity.this, SignUpThirdActivity.class);
